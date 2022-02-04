@@ -43,6 +43,10 @@ class Base {
         let adress = UserAdress(name: name, city: city, street: street, house: house, build: build, flat: flat)
         adresses.insert(adress, at: 0)
     }
+    
+    func deleteAdress(index: IndexPath) {
+        adresses.remove(at: index.row)
+    }
 }
 
 

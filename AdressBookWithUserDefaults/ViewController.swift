@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 
     @IBAction func saveAction(_ sender: Any) {
         let name = nameField.text!
@@ -35,8 +34,6 @@ class ViewController: UIViewController {
             Base.shared.saveAdress(name: name, city: city, street: street, house: house, build: build, flat: flat)
             self.navigationController?.popViewController(animated: true)
         }
-        
     }
-    
 }
 
