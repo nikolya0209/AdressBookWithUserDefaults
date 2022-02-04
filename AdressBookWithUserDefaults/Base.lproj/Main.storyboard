@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N4g-Ng-eT4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-CS-DfI">
-                                <rect key="frame" x="20" y="84" width="374" height="187.5"/>
+                                <rect key="frame" x="20" y="128" width="374" height="187.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MrW-6c-9YK">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
@@ -75,7 +75,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="y8z-gh-JXd">
-                                <rect key="frame" x="20" y="296.5" width="374" height="62.5"/>
+                                <rect key="frame" x="20" y="340.5" width="374" height="62.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-Fb-TL3">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="62.5"/>
@@ -131,7 +131,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edk-OO-wyI">
-                                <rect key="frame" x="20" y="395" width="374" height="36"/>
+                                <rect key="frame" x="20" y="439" width="374" height="36"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="rou-5Y-VNJ"/>
@@ -159,6 +159,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Edk-OO-wyI" secondAttribute="trailing" constant="20" id="zc9-1T-fV8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="28F-MU-hDa"/>
                     <connections>
                         <outlet property="buildField" destination="Ys2-Fa-CyG" id="oft-v6-skL"/>
                         <outlet property="cityField" destination="XR7-pa-hBO" id="18B-Hh-4gu"/>
@@ -170,7 +171,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
+        </scene>
+        <!--Адреса-->
+        <scene sceneID="DTd-5L-wDs">
+            <objects>
+                <tableViewController id="6wS-gu-cgA" customClass="AdressTableViewController" customModule="AdressBookWithUserDefaults" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sjv-nY-xrB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Pif-wj-Hee">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pif-wj-Hee" id="7ZI-UR-hIr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6wS-gu-cgA" id="d55-9c-pda"/>
+                            <outlet property="delegate" destination="6wS-gu-cgA" id="4et-zd-1Xg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Адреса" id="wzY-yC-csy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cyC-Y8-yGg">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="Z8B-sB-O76"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLn-Sx-9uk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0li-Vk-0ge">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N4g-Ng-eT4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0U3-2f-p8j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6wS-gu-cgA" kind="relationship" relationship="rootViewController" id="nY2-yX-Sfx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A82-Ia-N81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804.34782608695662" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
